@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "jspdf": "^2.5.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1"
   },
@@ -41,7 +42,9 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": { "vue/multi-word-component-names": 0 }
+    "rules": {
+      "vue/multi-word-component-names": 0
+    }
   },
   "browserslist": [
     "> 1%",

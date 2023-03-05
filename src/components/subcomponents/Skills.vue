@@ -1,40 +1,29 @@
 <template>
     <div>
-        <div class="cv-container-experiences">
+        <div class="cv-container-skills">
             <div :style="getBgColor" class="cv-container-title">
-                <p>Experiences</p>
+                <p>Skills</p>
             </div>
-            <div
-                v-for="(experience, index) in experiences"
-                class="cv-container-experiences-item"
-                :key="index"
-            >
-                <div class="cv-container-experiences-item-company">
-                    <p class="font-weight">{{ experience.name }}</p>
-                    <p class="experience-year">
-                        {{ experience.year }}
-                    </p>
+            <div v-for="(skill, index) in skills" :key="index" class="">
+                <div v-if="skill.length" class="cv-container-skills-item">
+                    <img :src="skillIcon" />
+                    <p class="skill-text">{{ skill }}</p>
                 </div>
-                <p class="experience-title">
-                    {{ experience.title }}
-                </p>
-                <p>
-                    {{ experience.description }}
-                </p>
-                <hr v-if="index !== experiences.length - 1" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { skillIcon } from '@/assets/iconsData'
 export default {
+    data() {
+        return {
+            skillIcon,
+        }
+    },
     props: {
-        cvDatas: {
-            type: Array,
-            default: () => [],
-        },
-        experiences: {
+        skills: {
             type: Array,
             default: () => [],
         },
@@ -70,25 +59,26 @@ export default {
         font-weight: 800;
     }
 
-    .experience-title {
+    .title {
         font-style: italic;
         font-size: 14px;
         margin-bottom: 12px;
     }
-    &-experiences {
+    &-skills {
         padding: 24px;
 
         &-item {
             padding: 8px;
-            &-company {
-                display: flex;
-                justify-content: space-between;
+            display: flex;
+            img {
+                width: 24px;
+                height: auto;
+            }
+            .skill-text {
+                margin-left: 8px;
             }
         }
 
-        .experience-year {
-            margin-left: 24px;
-        }
         p {
             margin: 0;
         }

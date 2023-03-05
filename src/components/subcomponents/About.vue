@@ -1,7 +1,9 @@
 <template>
     <div>
         <div class="cv-container-about">
-            <div class="cv-container-title"><p>About</p></div>
+            <div :style="getBgColor" class="cv-container-title">
+                <p>About</p>
+            </div>
             <div class="cv-container-about-item">
                 <div class="cv-container-about">
                     <p>

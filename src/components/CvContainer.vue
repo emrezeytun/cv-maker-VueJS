@@ -1,18 +1,22 @@
 <template>
-    <div class="cv-container">
-        <p>cv area</p>
-
+    <div id="cvContainer" class="cv-container">
         <Header
             :name="cvDatas[0].name"
             :jobTitle="cvDatas[0].jobTitle"
             :phoneNumber="cvDatas[0].phoneNumber"
+            :bgColor="bgColor"
+            :email="cvDatas[0].email"
         />
         <div class="cv-container-main-top">
             <div class="cv-container-main-top-experiences-area">
-                <Experiences :cvDatas="cvDatas" />
+                <Experiences
+                    :experiences="getExperiences"
+                    :bgColor="bgColor"
+                    :cvDatas="cvDatas"
+                />
             </div>
             <div class="cv-container-main-top-about-area">
-                <About :about="cvDatas[0].describe" />
+                <About :bgColor="bgColor" :about="cvDatas[0].describe" />
             </div>
         </div>
 
@@ -23,33 +27,74 @@
                     :university="cvDatas[0].university"
                     :department="cvDatas[0].department"
                     :highschoolYear="cvDatas[0].highschoolYear"
-                    :universityYear="cvDatas[0].highschoolYear"
+                    :universityYear="cvDatas[0].universityYear"
+                    :bgColor="bgColor"
                 />
             </div>
-            <div class="cv-container-main-bottom-about-area">
-                <About :about="cvDatas[0].describe" />
+            <div class="cv-container-main-bottom-skills-area">
+                <Skills
+                    :skills="[
+                        cvDatas[0].skill1,
+                        cvDatas[0].skill2,
+                        cvDatas[0].skill3,
+                        cvDatas[0].skill4,
+                        cvDatas[0].skill5,
+                        cvDatas[0].skill6,
+                    ]"
+                    :bgColor="bgColor"
+                />
             </div>
         </div>
 
         <br />
         <br />
         <br />
-        <pre>
-            {{ cvDatas }}
-        </pre>
     </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import { Header, Experiences, About, Education } from './subcomponents'
+import { Header, Experiences, About, Education, Skills } from './subcomponents'
 
 export default {
-    components: { Header, Experiences, About, Education },
+    components: { Header, Experiences, About, Education, Skills },
     props: {
         cvDatas: {
             type: Array,
             default: () => [],
+        },
+        bgColor: {
+            type: String,
+            default: '#ff4c4c',
+        },
+    },
+    methods: {
+        getBgColor(color) {
+            return `background-color: ${color}`
+        },
+    },
+    computed: {
+        getExperiences() {
+            return [
+                {
+                    name: this.cvDatas[0].experience_1,
+                    year: this.cvDatas[0].experience_1_year,
+                    title: this.cvDatas[0].experience_1_title,
+                    description: this.cvDatas[0].experience_1_description,
+                },
+                {
+                    name: this.cvDatas[0].experience_2,
+                    year: this.cvDatas[0].experience_2_year,
+                    title: this.cvDatas[0].experience_2_title,
+                    description: this.cvDatas[0].experience_2_description,
+                },
+                {
+                    name: this.cvDatas[0].experience_3,
+                    year: this.cvDatas[0].experience_3_year,
+                    title: this.cvDatas[0].experience_3_title,
+                    description: this.cvDatas[0].experience_3_description,
+                },
+            ]
         },
     },
 }
@@ -57,11 +102,9 @@ export default {
 
 <style lang="scss" scoped>
 .cv-container {
-    margin: 32px;
+    margin: 64px 32px 32px 32px;
     width: 80%;
     border: 1px solid #dadada;
-    max-height: 100vh;
-    overflow: scroll;
 
     &-main {
         &-top {
@@ -78,7 +121,7 @@ export default {
             &-education-area {
                 width: 50%;
             }
-            &-about-area {
+            &-skills-area {
                 width: 50%;
             }
         }

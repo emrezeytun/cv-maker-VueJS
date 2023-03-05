@@ -38,30 +38,28 @@ export default {
                             placeholder: 'Name',
                             key: 'name',
                             class: '',
+                            defaultValue: 'Emre Zeytun',
                         },
                         {
                             type: 'text',
                             placeholder: 'Job Title',
                             key: 'jobTitle',
                             class: '',
+                            defaultValue: 'Frontend Developer',
                         },
                         {
                             type: 'text',
                             placeholder: 'Phone Number',
                             key: 'phoneNumber',
                             class: '',
+                            defaultValue: '+90 (000) 00 00',
                         },
                         {
                             type: 'text',
                             placeholder: 'E-Mail',
                             key: 'email',
                             class: '',
-                        },
-                        {
-                            type: 'text',
-                            placeholder: 'LinkedIn Profile',
-                            key: 'linkedin',
-                            class: '',
+                            defaultValue: 'support@emrezeytun.com.tr',
                         },
                         {
                             type: 'textarea',
@@ -97,6 +95,7 @@ export default {
                             placeholder: 'University',
                             key: 'university',
                             class: '',
+                            defaultValue: 'University Name',
                         },
                         {
                             type: 'text',
@@ -110,6 +109,7 @@ export default {
                             placeholder: 'Department',
                             key: 'department',
                             class: '',
+                            defaultValue: 'Department Name',
                         },
                     ],
                 },
@@ -205,11 +205,69 @@ export default {
                         },
                     ],
                 },
+                {
+                    name: 'Skills',
+                    datas: [
+                        {
+                            type: 'text',
+                            placeholder: 'Skill 1',
+                            key: 'skill1',
+                            class: '',
+                            defaultValue: 'CSS/SCSS',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Skill 2',
+                            key: 'skill2',
+                            class: '',
+                            defaultValue: 'Javascript',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Skill 3',
+                            key: 'skill3',
+                            class: '',
+                            defaultValue: 'Vue JS',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Skill 4',
+                            key: 'skill4',
+                            class: '',
+                            defaultValue: 'React',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Skill 5',
+                            key: 'skill5',
+                            class: '',
+                            defaultValue: 'Angular',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Skill 6',
+                            key: 'skill6',
+                            class: '',
+                            defaultValue: 'Jquery',
+                        },
+                    ],
+                },
             ],
             cvDatas: dummyDatas,
         }
     },
     components: { Input },
+
+    mounted() {
+        const cvContainer = document
+            .querySelector('#cvContainer')
+            .getBoundingClientRect().height
+
+        document.querySelector('.sidebar').style.maxHeight = `${
+            cvContainer + 40
+        }px`
+    },
+
     methods: {
         onInputChange(key, value) {
             this.cvDatas = this.cvDatas.map((data) => {

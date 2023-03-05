@@ -1,6 +1,9 @@
 <template>
-    <div class="header">
-        <h2 class="font-weight">{{ name }}</h2>
+    <div :style="getBgColor" class="header">
+        <div class="header-information">
+            <h2 class="font-weight">{{ name }}</h2>
+            <h2 class="header-information-mail">{{ email }}</h2>
+        </div>
         <hr />
         <div class="header-description">
             <p class="title">{{ jobTitle }}</p>
@@ -12,11 +15,11 @@
 <script>
 export default {
     props: {
-        cvDatas: {
-            type: Array,
-            default: () => [],
-        },
         name: {
+            type: String,
+            default: '',
+        },
+        email: {
             type: String,
             default: '',
         },
@@ -46,6 +49,15 @@ export default {
     background: var(--sidebarColor);
     padding: 24px;
     color: #fff;
+    &-information {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-mail {
+            font-size: 16px !important;
+            font-weight: 400;
+        }
+    }
     &-description {
         display: flex;
         justify-content: space-between;

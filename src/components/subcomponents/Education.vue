@@ -1,7 +1,9 @@
 <template>
     <div>
         <div class="cv-container-education">
-            <div class="cv-container-title"><p>Education</p></div>
+            <div :style="getBgColor" class="cv-container-title">
+                <p>Education</p>
+            </div>
             <div class="cv-container-education-item">
                 <div class="cv-container-education-item-company">
                     <p class="font-weight">{{ highschool }}</p>
@@ -10,6 +12,7 @@
                     </p>
                 </div>
             </div>
+            <hr />
             <div class="cv-container-education-item">
                 <div class="cv-container-education-item-company">
                     <p class="font-weight">{{ university }}</p>
