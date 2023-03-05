@@ -23,6 +23,7 @@
 
 <script>
 import Input from '@/components/subcomponents/Input.vue'
+import { dummyDatas } from '@/assets/dummyDatas'
 
 export default {
     name: 'SideBar',
@@ -79,15 +80,30 @@ export default {
                     datas: [
                         {
                             type: 'text',
-                            placeholder: 'High School',
+                            placeholder: 'High School Name',
                             key: 'highschool',
                             class: '',
+                            defaultValue: 'High School Name',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'High School Year',
+                            key: 'highschoolYear',
+                            class: '',
+                            defaultValue: 'September 2010 - June 2014',
                         },
                         {
                             type: 'text',
                             placeholder: 'University',
                             key: 'university',
                             class: '',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'University Year',
+                            key: 'universityYear',
+                            class: '',
+                            defaultValue: 'September 2014 - June 2019',
                         },
                         {
                             type: 'text',
@@ -190,7 +206,7 @@ export default {
                     ],
                 },
             ],
-            cvDatas: [{}],
+            cvDatas: dummyDatas,
         }
     },
     components: { Input },
@@ -217,6 +233,8 @@ export default {
     max-width: 20%;
     background-color: var(--sidebarColor);
     padding: 16px;
+    max-height: 100vh;
+    overflow: scroll;
     h1 {
         color: #fff;
         font-size: 16px;

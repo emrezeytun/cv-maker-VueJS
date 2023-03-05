@@ -16,6 +16,40 @@
                     {{ cvDatas[0].experience_1_description }}
                 </p>
             </div>
+
+            <hr />
+
+            <div class="cv-container-experiences-item">
+                <div class="cv-container-experiences-item-company">
+                    <p class="font-weight">{{ cvDatas[0].experience_2 }}</p>
+                    <p class="experience-year">
+                        {{ cvDatas[0].experience_2_year }}
+                    </p>
+                </div>
+                <p class="experience-title">
+                    {{ cvDatas[0].experience_2_title }}
+                </p>
+                <p>
+                    {{ cvDatas[0].experience_2_description }}
+                </p>
+            </div>
+
+            <hr />
+
+            <div class="cv-container-experiences-item">
+                <div class="cv-container-experiences-item-company">
+                    <p class="font-weight">{{ cvDatas[0].experience_3 }}</p>
+                    <p class="experience-year">
+                        {{ cvDatas[0].experience_3_year }}
+                    </p>
+                </div>
+                <p class="experience-title">
+                    {{ cvDatas[0].experience_3_title }}
+                </p>
+                <p>
+                    {{ cvDatas[0].experience_3_description }}
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -49,6 +83,10 @@ export default {
         margin-bottom: 12px;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+    }
+
+    hr {
+        border: 1px solid rgba(0, 0, 0, 0.07);
     }
 
     .font-weight {

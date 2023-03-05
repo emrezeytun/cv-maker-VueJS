@@ -10,13 +10,14 @@
 // @ is an alias to /src
 import Sidebar from '@/components/Sidebar.vue'
 import CvContainer from '@/components/CvContainer.vue'
+import { dummyDatas } from '@/assets/dummyDatas'
 
 export default {
     name: 'Home',
     components: { Sidebar, CvContainer },
     data() {
         return {
-            cvDatas: [{}],
+            cvDatas: dummyDatas,
         }
     },
 
