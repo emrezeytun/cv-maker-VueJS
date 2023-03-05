@@ -15,6 +15,7 @@
             :placeholder="label"
             :rows="rows"
             :cols="columns"
+            @input="(e) => $emit('onInputChange', keyName, e.target.value)"
         >
         </textarea>
     </div>
