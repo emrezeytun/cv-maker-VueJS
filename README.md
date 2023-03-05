@@ -1,6 +1,6 @@
 ## Summarize
 
-It's basic CV maker. You can create your own CV and download by PDF. 
+It's basic CV maker. You can create your own CV and download as PDF. 
 
 ## Preview
 
@@ -9,7 +9,7 @@ It's basic CV maker. You can create your own CV and download by PDF.
 ## Project setup
 
 ```
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
