@@ -4,16 +4,16 @@
             <div class="cv-container-title"><p>Experiences</p></div>
             <div class="cv-container-experiences-item">
                 <div class="cv-container-experiences-item-company">
-                    <p class="font-weight">Hepsiburada</p>
-                    <p class="experience-year">2023-2024</p>
+                    <p class="font-weight">{{ cvDatas[0].experience_1 }}</p>
+                    <p class="experience-year">
+                        {{ cvDatas[0].experience_1_year }}
+                    </p>
                 </div>
-                <p class="experience-title">Mid Frontend Developer</p>
+                <p class="experience-title">
+                    {{ cvDatas[0].experience_1_title }}
+                </p>
                 <p>
-                    Hepsiburada is one of the best e-commerce company in Turkey.
-                    I'm working as a frontend developer in HepsiAds team.
-                    Microfrontends with Single-spa, React & Vue JS -Development
-                    of the new UI screens and enhancements to the existing
-                    screens.
+                    {{ cvDatas[0].experience_1_description }}
                 </p>
             </div>
         </div>
@@ -62,7 +62,6 @@ export default {
     }
     &-experiences {
         padding: 24px;
-        width: 40%;
 
         &-item {
             padding: 8px;

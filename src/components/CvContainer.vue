@@ -2,13 +2,19 @@
     <div class="cv-container">
         <p>cv area</p>
 
-        <div class="cv-container-header">
-            <h2 class="font-weight">Emre Zeytun</h2>
-            <hr />
-            <p class="title">Mid Frontend Developer</p>
+        <Header
+            :name="cvDatas[0].name"
+            :jobTitle="cvDatas[0].jobTitle"
+            :phoneNumber="cvDatas[0].phoneNumber"
+        />
+        <div class="cv-container-main">
+            <div class="cv-container-main-experiences-area">
+                <Experiences :cvDatas="cvDatas" />
+            </div>
+            <div class="cv-container-main-about-area">
+                <About :about="cvDatas[0].describe" />
+            </div>
         </div>
-
-        <Experiences :cvDatas="cvDatas" />
 
         <br />
         <br />
@@ -21,10 +27,10 @@
 
 <script>
 // @ is an alias to /src
-import { Experiences } from './subcomponents'
+import { Header, Experiences, About } from './subcomponents'
 
 export default {
-    components: { Experiences },
+    components: { Header, Experiences, About },
     props: {
         cvDatas: {
             type: Array,
@@ -40,18 +46,22 @@ export default {
     width: 80%;
     border: 1px solid #dadada;
 
-    .font-weight {
-        font-weight: 800;
+    &-main {
+        display: flex;
+        &-experiences-area {
+            width: 50%;
+        }
+        &-about-area {
+            width: 50%;
+        }
     }
 
-    &-header {
-        background: var(--sidebarColor);
-        padding: 24px;
-        color: #fff;
-        h2 {
-            font-size: 34px;
-            margin: 0;
-        }
+    &-about-area {
+        width: 40%;
+    }
+
+    .font-weight {
+        font-weight: 800;
     }
 }
 </style>

@@ -7,6 +7,7 @@
             :class="className"
             :placeholder="label"
             :key="keyName"
+            :value="defaultValue"
             @input="(e) => $emit('onInputChange', keyName, e.target.value)"
         />
         <textarea
@@ -15,6 +16,7 @@
             :placeholder="label"
             :rows="rows"
             :cols="columns"
+            :value="defaultValue"
             @input="(e) => $emit('onInputChange', keyName, e.target.value)"
         >
         </textarea>
@@ -37,6 +39,10 @@ export default {
             default: '',
         },
         keyName: {
+            type: String,
+            default: '',
+        },
+        defaultValue: {
             type: String,
             default: '',
         },

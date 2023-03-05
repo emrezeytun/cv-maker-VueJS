@@ -9,6 +9,7 @@
                     :type="data.type"
                     :placeholder="data.placeholder"
                     :keyName="data.key"
+                    :defaultValue="data.defaultValue"
                     :class="data.class"
                     :label="data.placeholder"
                     :rows="data.rows"
@@ -34,13 +35,13 @@ export default {
                         {
                             type: 'text',
                             placeholder: 'Name',
-                            key: 'Name',
+                            key: 'name',
                             class: '',
                         },
                         {
                             type: 'text',
-                            placeholder: 'Address',
-                            key: 'address',
+                            placeholder: 'Job Title',
+                            key: 'jobTitle',
                             class: '',
                         },
                         {
@@ -66,6 +67,8 @@ export default {
                             placeholder: 'Describe Yourself',
                             key: 'describe',
                             class: '',
+                            defaultValue:
+                                "I have graduated from Computer Engineering in 2021. In the past, my friend and I founded our small company on software, graphic design and server management in 2014. In this journey, which we started as two partners, we have provided services to more than 300 customers in different areas such as server management and support, web software, web design, graphic design, WordPress and opencart solutions, AdWords configurations and management, and eCommerce solutions. In this way, I have focused on my business in my free time during my university years and progressed on top of what I have learned. Right now, I'm working as a software developer.",
                             rows: 4,
                             columns: 100,
                         },
@@ -102,48 +105,87 @@ export default {
                             placeholder: 'Experience 1',
                             key: 'experience_1',
                             class: '',
+                            defaultValue: 'Hepsiburada',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Experience 1 Title',
+                            key: 'experience_1_title',
+                            class: '',
+                            defaultValue: 'Mid Frontend Developer',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Experience 1 Year',
+                            key: 'experience_1_year',
+                            class: '',
+                            defaultValue: '2022 March - Present',
                         },
                         {
                             type: 'text',
                             placeholder: 'Experience 1 Description',
                             key: 'experience_1_description',
                             class: '',
+                            defaultValue:
+                                "Hepsiburada is one of the best e-commerce company in Turkey. I'm working as a frontend developer in HepsiAds team. Microfrontends with Single-spa, React & Vue JS -Development of the new UI screens and enhancements to the existing screens.",
                         },
                         {
                             type: 'text',
                             placeholder: 'Experience 2',
                             key: 'experience_2',
                             class: '',
+                            defaultValue: 'SEDBIM',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Experience 2 Title',
+                            key: 'experience_2_title',
+                            class: '',
+                            defaultValue: 'Frontend Developer',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Experience 2 Year',
+                            key: 'experience_2_year',
+                            class: '',
+                            defaultValue: '2021 July - 2022 March',
                         },
                         {
                             type: 'text',
                             placeholder: 'Experience 2 Description',
                             key: 'experience_2_description',
                             class: '',
+                            defaultValue:
+                                'Transport management systems, airport-hotel booking systems, travel agency management systems, B2B. I work in the front-end development of theese projects.',
                         },
                         {
                             type: 'text',
                             placeholder: 'Experience 3',
                             key: 'experience_3',
                             class: '',
+                            defaultValue: 'TRNET',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Experience 3 Title',
+                            key: 'experience_3_title',
+                            class: '',
+                            defaultValue: 'Intern',
+                        },
+                        {
+                            type: 'text',
+                            placeholder: 'Experience 3 Year',
+                            key: 'experience_3_year',
+                            class: '',
+                            defaultValue: '2020 July - 2020 August',
                         },
                         {
                             type: 'text',
                             placeholder: 'Experience 3 Description',
                             key: 'experience_3_description',
                             class: '',
-                        },
-                        {
-                            type: 'text',
-                            placeholder: 'Experience 4',
-                            key: 'experience_4',
-                            class: '',
-                        },
-                        {
-                            type: 'text',
-                            placeholder: 'Experience 4 Description',
-                            key: 'experience_4_description',
-                            class: '',
+                            defaultValue:
+                                'In my 30-day internship, I took part in eCommerce web page creation, AdWords configurations and management, corporate web design, coding the designs and QR Code systems.',
                         },
                     ],
                 },
